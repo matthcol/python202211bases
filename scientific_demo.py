@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # data to download here:
 # https://data.toulouse-metropole.fr/explore/dataset/cafes-concerts/export/
-coffees = pd.read_csv('cafes-concerts.csv', sep=';')
+coffees = pd.read_csv('data/cafes-concerts.csv', sep=';')
 print(coffees)
 
 x = np.linspace(0, 2*np.pi, 10000)

@@ -1,5 +1,10 @@
 # list
-cities = [ "Toulouse", "Versailles", "Pau", "Bordeaux" ]
+cities = [ 
+    "Toulouse", 
+    "Versailles", 
+    "Pau", 
+    "Bordeaux", 
+    ]
 print(cities)
 
 # loops
@@ -40,6 +45,7 @@ for i, city in enumerate(cities, 1):
     print("\t°", i, city)
 print()
 
+# dict (dictionary)
 city = {
     'name': 'Toulouse',
     'pop': 471941,
@@ -48,7 +54,6 @@ city = {
 
 print(city)
 print(city['name'])
-
 
 for k in city: # i.e. city.keys()
     print("Key -> Value:", k, city[k])
@@ -62,7 +67,30 @@ for key, value in city.items():
     print("Key, Value:", key, value)
 print()
 
+# tuples (non mutable)
+# nb: 
+#  - () empty tuple
+#  - (12,) tuple with one element
+city = ('Toulouse', 471941, '31000')
+print(city)
+print(city[0])
 
+# tuple is not mutable
+# city[0] = 'Blagnac' # 'tuple' object does not support item assignment
+
+# list are mutable
+cities[0] = 'Blagnac'
+cities.append('Toulouse')
+print(cities)
+cities.remove('Pau')
+print(cities)
+del cities[3]
+print(cities)
+
+cities.clear()
+print(cities)
+
+del cities
 # other loop: while
 
 # conditional: if, case
