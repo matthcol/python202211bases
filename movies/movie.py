@@ -1,6 +1,11 @@
 import operator as op
+import functools as fun
 
+# See also: properties, @dataclass
+
+@fun.total_ordering
 class Movie:
+    """class representing an object movie with its title, year, duration (opt)"""
     
     def __init__(self, title, year, duration=None):
         """constructor"""
@@ -18,7 +23,9 @@ class Movie:
         return self.duration if self.duration is not None else 0
 
     def __eq__(self, other):
-        """ override == and != """ 
+        """ override == and != 
+        NB: deactivate __hash__
+        """ 
         if not isinstance(other, Movie):
             return NotImplemented
         return (self.title, self.year) == (other.title, other.year)
@@ -53,5 +60,9 @@ if __name__ == '__main__':
     print(movies)
     movies.sort(key=op.attrgetter('title'))
     print(movies)
+    # other order comparisons
+    print(f"{m1} > {m2}", m1 > m2)
+    print(f"{m1} <= {m2}", m1 <= m2)
+    print(f"{m1} >= {m2}", m1 >= m2)
 
 
