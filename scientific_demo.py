@@ -9,7 +9,8 @@ print(coffees)
 
 x = np.linspace(0, 2*np.pi, 10000)
 y = np.sin(x)
+z = np.cos(x)
 
-plt.plot(x,y)
+plt.plot(x, y, 'r', x, z, 'b', linestyle='dashed', linewidth=2)
 plt.show()
 
